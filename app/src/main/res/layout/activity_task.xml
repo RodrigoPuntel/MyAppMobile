@@ -7,87 +7,140 @@
     android:orientation="vertical"
     tools:context=".TaskActivity">
 
-    <TextView
-        android:id="@+id/txtBemvindo"
+    <!-- Menu Superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:elevation="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <!-- Botão Hamburguer -->
+        <ImageButton
+            android:id="@+id/btnHamburguer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Menu"
+            android:src="@drawable/vector" />
+
+        <!-- Logo Central -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="Logo"
+            android:src="@drawable/logo" />
+
+        <!-- Botão Logout -->
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:src="@drawable/adm" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
-        android:gravity="center"
-        android:textColor="#FF0000"
-        android:textStyle="bold"
-        android:text="Bem-vindo"/>
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Nome"
-        android:textSize="20sp" />
+        <!-- Tarefas Pendentes -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="left"
+            android:text="Tarefas pendentes"
+            android:textColor="#035D91"
+            android:textSize="16sp" />
+
+        <!-- Botão Add Item -->
+        <Button
+            android:id="@+id/btnAddItem"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:backgroundTint="#67BDA8"
+            android:fontFamily="@font/nunito_bold"
+            android:onClick="addItemClick"
+            android:text="@string/add_item"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/txtTaskName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome da task"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Descrição"
-        android:textSize="20sp" />
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/rounded_border_task"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="@string/digite_a_tarefa_que_deseja_adicionar"
+        android:textSize="11sp" />
 
     <EditText
         android:id="@+id/txtTaskDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descrição da task"
-        android:textSize="20sp" />
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/rounded_border_task"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="@string/digite_a_descricao_da_tarefa"
+        android:textSize="11sp" />
 
 
     <Button
         android:id="@+id/btnAddTask"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="left"
-        android:text="Adicionar Task"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/ok"
         android:onClick="addTaskClick"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+        android:backgroundTint="#035D91"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        tools:ignore="RtlHardcoded" />
 
-    <Button
-        android:id="@+id/btnDelTask"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_gravity="left"
-        android:text="Deletar Task"
-        android:onClick="delTaskClick"
-        android:textColor="#000000"
-        android:textSize="20sp" />
-    <Button
-        android:id="@+id/showTasks"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_gravity="left"
-        android:text="Mostrar Tasks"
-        android:onClick="showTasksClick"
-        android:textColor="#000000"
-        android:textSize="20sp" />
-
-
-
-    <Button
+    <!-- Tarefas Incompletas -->
+    <ListView
+        android:id="@+id/listViewTasks"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Sair"
-        android:layout_gravity="center"
-        android:onClick="logoutClick"
-        android:textColor="#000000"
-        android:textSize="28sp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
+
+    <View
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#D0D0D0" />
+
+    <!-- Tarefas completas -->
+    <ListView
+        android:id="@+id/listViewCompleteTasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
+
+
 
 </LinearLayout>

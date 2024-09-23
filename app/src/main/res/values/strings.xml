@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MyAppMobile</string>
+    <string name="fazer_login">Fazer Login</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="e_mail">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="usuario">Usuário</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="ja_possui_uma_conta">Já possui uma conta?</string>
+    <string name="ainda_nao_possui_uma_conta">Ainda não possui uma conta?</string>
+    <string name="ok">OK</string>
+    <string name="digite_a_descricao_da_tarefa">Digite a descrição da tarefa...</string>
+    <string name="digite_a_tarefa_que_deseja_adicionar">Digite a tarefa que deseja adicionar...</string>
+    <string name="add_item">+ add Item</string>
 </resources>

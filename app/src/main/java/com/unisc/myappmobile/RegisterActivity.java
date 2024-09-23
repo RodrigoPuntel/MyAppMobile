@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
     }
 
-    // Método para registrar um novo usuário
+
     public void signInClick(View view) {
         String user = txtUser.getText().toString();
         String pwd = txtPwd.getText().toString();

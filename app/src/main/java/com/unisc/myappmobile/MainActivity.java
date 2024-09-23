@@ -36,17 +36,17 @@ public class MainActivity extends AppCompatActivity {
         preferences = getSharedPreferences("Shared", Context.MODE_PRIVATE);
         boolean session = preferences.getBoolean("session", false);
 
-        // Valida login automático
+        // Valida login
         if (session) {
             String user = preferences.getString("user", "");
-            String userId = preferences.getString("userId", ""); // Recupera o userId da sessão
+            String userId = preferences.getString("userId", "");
 
-            if (!userId.isEmpty()) { // Verifica se o userId foi recuperado corretamente
+            if (!userId.isEmpty()) {
                 Intent intent = new Intent(MainActivity.this, TaskActivity.class);
                 intent.putExtra("usuario", user);
-                intent.putExtra("userId", userId); // Passa o userId para TaskActivity
+                intent.putExtra("userId", userId);
                 startActivity(intent);
-                finish(); // Encerra a MainActivity após o redirecionamento
+                finish();
             } else {
                 showMessage("Falha ao recuperar o ID do usuário.");
             }
@@ -109,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MOBY", error.toString());
             }
         });
+    }
+
+    public void toRegisterClick(View view) {
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showMessage(String msg) {

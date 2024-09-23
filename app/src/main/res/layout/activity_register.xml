@@ -8,76 +8,112 @@
     android:orientation="vertical"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="BETTER YOU"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp" />
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="28dp"
+        android:layout_gravity="start"
+        android:src="@drawable/voltar" />
+
+    <ImageView
+        android:layout_width="169dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/logo" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Usuário"
-        android:textSize="20sp" />
+        android:layout_width="134dp"
+        android:layout_height="28dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="39dp"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/cadastro"
+
+        android:textColor="#035D91"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/txtUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite o usuario"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Senha"
-        android:textSize="20sp" />
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_border"
+        android:fontFamily="@font/nunito"
+        android:hint="@string/usuario"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/txtPwd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite a senha"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_border"
+        android:fontFamily="@font/nunito"
+        android:hint="@string/senha"
         android:inputType="textPassword"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="E-mail"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/txtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite o endereço de E-mail"
-        android:textSize="20sp" />
-
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_border"
+        android:fontFamily="@font/nunito"
+        android:hint="@string/e_mail"
+        android:textSize="15sp" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#035D91"
+        android:fontFamily="@font/nunito_bold"
         android:onClick="signInClick"
-        android:text="Registrar"
-        android:textColor="#000000"
-        android:textSize="28sp" />
+        android:text="@string/criar_conta"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#D0D0D0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nunito"
+        android:gravity="center"
+        android:text="@string/ja_possui_uma_conta"
+        android:textColor="#676767"
+        android:textSize="14sp" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:id="@+id/toMainButton"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#1A035D91"
+        android:fontFamily="@font/nunito_bold"
         android:onClick="toMainClick"
-        android:text="Já está registrado?"
-        android:textColor="#000000"
-        android:textSize="22sp" />
+        android:text="@string/fazer_login"
+        android:textColor="#035D91"
+        android:textSize="19sp"
+        app:strokeColor="#035D91"
+        app:strokeWidth="2dp" />
+
 
 
 </LinearLayout>
